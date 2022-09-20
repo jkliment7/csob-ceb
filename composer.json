@@ -1,10 +1,9 @@
 {
-  "name": "asisteam/csob-bc",
+  "name": "jkliment7/csob-bec",
   "description": "CSOB Business Connector - for download/upload files automation",
   "keywords": ["CSOB", "Business Connector", "API"],
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/AsisTeam/csob-bc",
   "repositories": [
     {
       "type": "vcs",
