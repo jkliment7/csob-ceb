@@ -8,7 +8,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/jkliment7/csob-ceb"
+      "url": "https://github.com:jkliment7/csob-ceb"
     }
   ],
   "authors": [
