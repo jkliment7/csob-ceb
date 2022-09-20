@@ -66,9 +66,9 @@ final class Report implements IReport
 			$report->dateEnd = new DateTimeImmutable((string) $xml->FINSTA03->S62_DATUM);
 		}
 
-		$currency            = (string) $xml->FINSTA03->S60_MENA;
-		$report->amountStart = XmlCsobReader::createMoney((string) $xml->FINSTA03->S60_CASTKA, $currency);
-		$report->amountEnd = XmlCsobReader::createMoney((string) $xml->FINSTA03->S62_CASTKA, $currency);
+		$report->currency  = (string) $xml->FINSTA03->S60_MENA;
+		$report->amountStart = (int) $xml->FINSTA03->S60_CASTKA;
+		$report->amountEnd = (int) $xml->FINSTA03->S62_CASTKA;
 
 		foreach ($xml->FINSTA03->FINSTA05 as $item) {
 			$report->addEntry(ReportEntry::fromXml($item));
