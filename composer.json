@@ -4,12 +4,6 @@
   "keywords": ["CSOB", "Business Connector", "API"],
   "type": "library",
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com:jkliment7/csob-ceb"
-    }
-  ],
   "authors": [
     {
       "name": "Tomas Sedlacek",
