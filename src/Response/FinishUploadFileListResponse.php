@@ -27,7 +27,7 @@ final class FinishUploadFileListResponse extends AbstractResponse
 		self::assertResponse($resp);
 
 		$files = [];
-		if (isset($resp->FileList->FileStatus) && is_array($resp->FileList->FileStatus)) {
+		if (isset($resp->FileList->FileStatus) && is_object($resp->FileList->FileStatus)) {
 			foreach ($resp->FileList->FileStatus as $f) {
 				$files[] = self::fillFile((array) $f);
 			}
