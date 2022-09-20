@@ -5,6 +5,12 @@
   "type": "library",
   "license": "MIT",
   "homepage": "https://github.com/AsisTeam/csob-bc",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/jkliment7/csob-ceb"
+    }
+  ],
   "authors": [
     {
       "name": "Tomas Sedlacek",
