@@ -28,10 +28,10 @@ final class Report implements IReport
 	/** @var DateTimeImmutable */
 	private $dateEnd;
 
-	/** @var Money */
+	/** @var float */
 	private $amountStart;
 
-	/** @var Money */
+	/** @var float */
 	private $amountEnd;
 
 	/** @var string */
@@ -113,7 +113,7 @@ final class Report implements IReport
 		return $this->dateStart;
 	}
 
-	public function getAmountStart(): Money
+	public function getAmountStart(): float
 	{
 		return $this->amountStart;
 	}
@@ -123,7 +123,7 @@ final class Report implements IReport
 		return $this->dateEnd;
 	}
 
-	public function getAmountEnd(): Money
+	public function getAmountEnd(): float
 	{
 		return $this->amountEnd;
 	}

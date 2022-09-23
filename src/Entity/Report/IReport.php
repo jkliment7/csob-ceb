@@ -14,9 +14,9 @@ interface IReport
 	public function getFrequency(): string;
 
 	public function getDateStart(): ?DateTimeImmutable;
-	public function getAmountStart(): Money;
+	public function getAmountStart(): float;
 	public function getDateEnd(): DateTimeImmutable;
-	public function getAmountEnd(): Money;
+	public function getAmountEnd(): float;
 
 	/** @return IReportEntry[] */
 	public function getEntries(): array;
