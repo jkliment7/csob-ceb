@@ -10,7 +10,7 @@ interface IReportEntry
 
 	public function getId(): string;
 	public function getDate(): DateTimeImmutable;
-	public function getAmount(): Money;
+	public function getAmount(): float;
 	public function getVariableSymbol(): string;
 	public function getSpecificSymbol(): string;
 	public function getConstantSymbol(): string;
@@ -36,7 +36,7 @@ interface IReportEntry
 	/**
 	 * for foreign payments
 	 */
-	public function getOriginalAmount(): ?Money;
+	public function getOriginalAmount(): ?float;
 	public function getRate(): ?string;
 
 }

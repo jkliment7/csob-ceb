@@ -36,7 +36,7 @@ final class ReportEntry implements IReportEntry
 	/** @var string */
 	private $indicator;
 
-	/** @var Money */
+	/** @var float */
 	private $amount;
 
 	/** @var string */
@@ -63,7 +63,7 @@ final class ReportEntry implements IReportEntry
 	/** @var string */
 	private $remark;
 
-	/** @var Money|null */
+	/** @var float|null */
 	private $originalAmount;
 
 	/** @var string|null */
@@ -80,7 +80,7 @@ final class ReportEntry implements IReportEntry
 		$entry->accountNo      = (string) $el->PART_ACCNO;
 		$entry->accountBank    = (string) $el->PART_BANK_ID;
 		$entry->date           = new DateTimeImmutable((string) $el->S61_DATUM);
-		$entry->amount         = XmlCsobReader::createMoney((string) $el->S61_CASTKA, (string) $el->S61_MENA);
+		$entry->amount         = (float) $el->S61_CASTKA;
 		$entry->variableSymbol = (string) $el->S86_VARSYMOUR;
 		$entry->specificSymbol = (string) $el->S86_SPECSYMOUR;
 		$entry->constantSymbol = (string) $el->S86_KONSTSYM;
@@ -113,7 +113,7 @@ final class ReportEntry implements IReportEntry
 		return $this->date;
 	}
 
-	public function getAmount(): Money
+	public function getAmount(): float
 	{
 		return $this->amount;
 	}
