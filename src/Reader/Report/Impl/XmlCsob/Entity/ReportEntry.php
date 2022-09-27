@@ -173,7 +173,7 @@ final class ReportEntry implements IReportEntry
 		return $this->type === self::SPE;
 	}
 
-	public function getOriginalAmount(): ?Money
+	public function getOriginalAmount(): ?float
 	{
 		return $this->originalAmount;
 	}
