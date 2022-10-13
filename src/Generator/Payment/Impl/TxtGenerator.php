@@ -118,7 +118,7 @@ final class TxtGenerator implements IPaymentFileGenerator
 			$p->getType(),
 			$p->getOriginatorAccountNumber(),
 			$p->getDueDate()->format('Ymd'),
-			$this->moneyFormatter->format($p->getAmount()),
+			$p->getAmount(),
 			$p->getCounterpartyAccountNumber(),
 			$p->getCounterpartyBankCode(),
 			$p->getConstantSymbol() ?? '',

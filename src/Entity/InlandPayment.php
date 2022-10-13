@@ -6,7 +6,6 @@ use AsisTeam\CSOBBC\Enum\PaymentOrderType;
 use AsisTeam\CSOBBC\Exception\Logical\InvalidArgumentException;
 use AsisTeam\CSOBBC\Exception\LogicalException;
 use DateTimeImmutable;
-use Money\Money;
 
 final class InlandPayment implements IPaymentOrder
 {
@@ -20,7 +19,7 @@ final class InlandPayment implements IPaymentOrder
 	/** @var DateTimeImmutable */
 	private $dueDate;
 
-	/** @var Money */
+	/** @var int */
 	private $amount;
 
 	/** @var string */
@@ -56,7 +55,7 @@ final class InlandPayment implements IPaymentOrder
 	public function __construct(
 		string $type,
 		string $originatorAccountNumber,
-		Money $amount,
+		int $amount,
 		string $counterpartyAccountNumber,
 		string $counterpartyBankCode,
 		?DateTimeImmutable $dueDate = null,
@@ -114,21 +113,16 @@ final class InlandPayment implements IPaymentOrder
 		return $this;
 	}
 
-	public function getAmount(): Money
+	public function getAmount(): int
 	{
 		return $this->amount;
 	}
 
-	public function setAmount(Money $amount): self
+	public function setAmount(int $amount): self
 	{
-		if (!$amount->isPositive()) {
+		if (!$amount > 0) {
 			throw new LogicalException('Payment amount must be positive number');
 		}
-
-		if ($amount->getCurrency()->getCode() !== 'CZK') {
-			throw new LogicalException('Only amounts with CZK currency are allowed for inland payments.');
-		}
-
 		$this->amount = $amount;
 
 		return $this;
