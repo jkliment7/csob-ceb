@@ -164,7 +164,7 @@ final class Mt942Reader implements IAdviceReader
 
 		$rest   = explode(',', $rest);
 		$amount = $rest[0] . substr($rest[1], 0, 2);
-		$tr->setAmount(new Money((int) $amount, new Currency('CZK')));
+		$tr->setAmount((float) $amount);
 
 		$trType = substr($rest[1], 2, 4);
 		$tr->setTransactionType($trType);
