@@ -5,6 +5,7 @@ namespace AsisTeam\CSOBBC\Reader\Advice\Impl\MT942\Entity;
 use AsisTeam\CSOBBC\Entity\Advice\IAdvisedPayment;
 use AsisTeam\CSOBBC\Entity\Advice\IAdvisedTransaction;
 use DateTimeImmutable;
+use Money\Money;
 
 final class AdvisedTransaction implements IAdvisedTransaction
 {
@@ -21,7 +22,7 @@ final class AdvisedTransaction implements IAdvisedTransaction
 	/** @var string */
 	private $bookType = '';
 
-	/** @var float */
+	/** @var Money */
 	private $amount;
 
 	/** @var string */
@@ -70,7 +71,7 @@ final class AdvisedTransaction implements IAdvisedTransaction
 		return $this->bookType;
 	}
 
-	public function getAmount(): float
+	public function getAmount(): Money
 	{
 		return $this->amount;
 	}
@@ -115,7 +116,7 @@ final class AdvisedTransaction implements IAdvisedTransaction
 		$this->bookType = $bookType;
 	}
 
-	public function setAmount(float $amount): void
+	public function setAmount(Money $amount): void
 	{
 		$this->amount = $amount;
 	}
