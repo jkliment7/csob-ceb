@@ -11,7 +11,7 @@ interface IAdvisedTransaction
 	public function getDate(): DateTimeImmutable;
 	public function getDateBooked(): DateTimeImmutable;
 	public function getBookType(): string;
-	public function getAmount(): Money;
+	public function getAmount(): float;
 	public function getTransactionType(): string;
 	public function getClientReference(): string;
 	public function getBankReference(): string;
